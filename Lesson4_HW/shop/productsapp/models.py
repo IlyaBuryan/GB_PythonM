@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class ProductModel(models.Model):
     MEASURES_FIELDS = [
         ('KG', 'Kilograms'),
