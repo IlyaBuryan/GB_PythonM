@@ -1,0 +1,18 @@
+{% extends 'productsapp/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block main %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="prodict_item">
+        {{ form.as_p }}
+    </div>
+    <input type="submit" value="save">
+</form>
+
+{% endblock %}

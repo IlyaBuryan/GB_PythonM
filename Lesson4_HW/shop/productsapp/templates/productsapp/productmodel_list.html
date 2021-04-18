@@ -1,0 +1,18 @@
+{% extends 'productsapp/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block main %}
+{% for i in object_list %}
+<div class="prodict_item">
+    <h2>{{ i.name }}</h2>
+    <p>Цена: {{ i.price }}</p>
+    <p>Ед: {{ i.measure }}</p>
+    <p>Продавец: {{ i.vendor }}</p>
+    <p>Дата: {{ i.date|date:"Y-M-d" }}</p>
+</div>
+{% endfor %}
+{% endblock %}
