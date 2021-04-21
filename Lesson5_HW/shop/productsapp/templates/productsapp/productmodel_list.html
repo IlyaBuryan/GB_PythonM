@@ -1,0 +1,31 @@
+{% extends 'productsapp/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block main %}
+<button type="button" class="js-create-good" data-url="{% url 'productsapp:product_add' %}">Сохранить новый товар
+</button>
+
+<div id="good-table">
+    {% for i in object_list %}
+    <div class="prodict_item">
+        <h2>{{ i.name }}</h2>
+        <p>Цена: {{ i.price }}</p>
+        <p>Ед: {{ i.measure }}</p>
+        <p>Продавец: {{ i.vendor }}</p>
+        <p>Дата: {{ i.date|date:"Y-M-d" }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="modal fade" id="modal-good">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
